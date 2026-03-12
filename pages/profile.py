@@ -94,10 +94,11 @@ class ProfilePage(ctk.CTkFrame):
         self.pw_msg = ctk.CTkLabel(pw_card, text="")
         self.pw_msg.grid(row=6, column=0, pady=(2, 4))
 
-        ctk.CTkButton(pw_card, text="Change Password", command=self.handle_change_password).grid(
-            row=7, column=0, sticky="ew", padx=16, pady=(4, 16)
-        )
-
+        ctk.CTkButton(pw_card, text="Change Password", height=32,
+              font=("Arial", 12), corner_radius=8, width=180,
+              command=self.handle_change_password).grid(
+                  row=7, column=0, pady=(4, 16))
+              
     # ── Called by App.show_frame() ─────────────────────────────────────────
     def on_show(self):
         self.welcome.configure(text=f"Hi, {self.app.current_user_name}")
